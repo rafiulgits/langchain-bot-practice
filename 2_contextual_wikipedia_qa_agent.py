@@ -38,10 +38,18 @@ agent_chain = AgentExecutor.from_agent_and_tools(agent=agent, tools=tools,memory
 
 input_text = ""
 while True:
-    input_text = input("You: ")
+    input_text = input("[You]: ")
     if input_text.lower() == "quit":
         break
     output_text = agent_chain.run(input_text)
-    print("Bot:", output_text)
+    print("[Bot]:", output_text)
 
 
+
+
+# Sample I/O
+# [You]: Where is Bangladesh?
+# [Bot]: Bangladesh is located in South Asia, bordered by India to the west, north, and east, and Myanmar to the southeast; to the south it has a coastline along the Bay of Bengal.
+# [You]: What is the capital of it?
+# [Bot]: The capital of Bangladesh is Dhaka.
+# [You]: quit
