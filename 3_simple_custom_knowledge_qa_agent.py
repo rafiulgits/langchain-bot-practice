@@ -37,11 +37,11 @@ while True:
 # [YOU]: Tell my name
 # [BOT]:  Your name is Rafiul Islam.
 # [YOU]: Where I am currently working?
-# [BOT]:  LogiQbits Limited.
+# [BOT]: LogiQbits Limited.
 # [YOU]: Tell me about my first job
-# [BOT]:  You did your first job as an intern at Cefalo Bangladesh Limited.
+# [BOT]: You did your first job as an intern at Cefalo Bangladesh Limited.
 # [YOU]: What about SolseTech?
-# [BOT]:  I worked at SolseTech Limited for one and a half years before starting my own business.
+# [BOT]: I worked at SolseTech Limited for one and a half years before starting my own business.
 # [YOU]: Who worked at SolseTech?
-# [BOT]:  Rafiul Islam worked at SolseTech.
+# [BOT]: Rafiul Islam worked at SolseTech.
 # [YOU]: quit
