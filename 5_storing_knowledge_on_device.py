@@ -13,7 +13,7 @@ load_dotenv(".env.local")
 
 
 def setup_knowledge():
-    loader = TextLoader("./resources/state-of-the-union-2023.txt")
+    loader = TextLoader("./temp/res/state-of-the-union-2023.txt")
     documents = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     splitted_documents = text_splitter.split_documents(documents)
@@ -22,7 +22,7 @@ def setup_knowledge():
     Chroma.from_documents(
         documents=splitted_documents,
         embedding=embeddings,
-        persist_directory="chromadb",
+        persist_directory="./db/task5",
         collection_name="about_congres",
     )
 
@@ -30,7 +30,7 @@ def setup_knowledge():
 def get_knowledge():
     embeddings = HuggingFaceEmbeddings()
     store = Chroma(
-        persist_directory="chromadb",
+        persist_directory="./db/task5",
         embedding_function=embeddings,
         collection_name="about_congres",
     )
@@ -52,8 +52,8 @@ def run():
     retriever = knowledge.as_retriever()
     chain = RetrievalQA.from_chain_type(llm=llm, retriever=retriever, verbose=True)
     input_text = ""
+    print("[BOT]: Hello! Ask me about the doc")
     while True:
-        print("[BOT]: Hello! Ask me about the doc")
         input_text = input("[YOU]: ")
         if input_text.lower() == "quit":
             break
